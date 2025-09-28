@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Case Generator - Automatic Mode</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Test Case Generator</h1>
+            <div class="toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="modeToggle" checked>
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label automatic-mode">Automatic</span>
+            </div>
+        </header>
+
+        <div class="automatic-main-content">
+            <!-- Left Panel - Dashboard Area -->
+            <div class="dashboard-panel">
+                <div class="repo-input-section">
+                    <div class="input-group">
+                        <label for="autoRepoUrl">Repository URL</label>
+                        <input type="text" id="autoRepoUrl" placeholder="https://github.com/user/repository or https://gitlab.com/user/repository">
+                    </div>
+                    <button id="showDashboardBtn" class="btn btn-primary">Show Dashboard</button>
+                </div>
+                
+                <div class="dashboard-container">
+                    <div class="dashboard-header">
+                        <h3>Automation Brain Analytics Dashboard</h3>
+                        <p>Real-time analytics on code quality and CI/CD performance</p>
+                    </div>
+                    
+                    <div class="dashboard-content">
+                        <!-- Single Optimized Dashboard -->
+                        <div class="iframe-container-single">
+                            <iframe 
+                                width="100%" 
+                                height="600" 
+                                src="https://lookerstudio.google.com/embed/reporting/5c991d07-2bbe-4661-9b51-2dfacf07bbc9/page/y6dZF" 
+                                frameborder="0" 
+                                style="border:0; border-radius: 8px;" 
+                                allowfullscreen 
+                                sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Guide and AI Suggestions -->
+            <div class="sidebar-panel">
+                <!-- Guide Section -->
+                <div class="sidebar-section">
+                    <h3>Setup Guide</h3>
+                    <div class="guide-content">
+                        <div class="guide-step">
+                            <h4>📋 Step 1: Repository Setup</h4>
+                            <p>Connect your GitHub or GitLab repository to enable automated monitoring and analysis.</p>
+                        </div>
+                        
+                        <div class="guide-step">
+                            <h4>🔧 Step 2: Configure CI/CD</h4>
+                            <p>Set up your CI/CD pipeline to automatically trigger analysis on code commits and deployments.</p>
+                        </div>
+                        
+                        <div class="guide-step">
+                            <h4>📊 Step 3: Monitor Dashboard</h4>
+                            <p>Track code quality metrics, test coverage, and performance indicators in real-time.</p>
+                        </div>
+                        
+                        <div class="guide-step">
+                            <h4>🚀 Step 4: Optimize</h4>
+                            <p>Use AI suggestions to improve code quality and automate test generation processes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Code Suggestions Section -->
+                <div class="sidebar-section">
+                    <h3>AI Code Suggestions</h3>
+                    <div class="ai-suggestions-content">
+                        <div class="suggestion-item">
+                            <div class="suggestion-icon">💡</div>
+                            <div class="suggestion-text">
+                                <h4>Optimize Database Queries</h4>
+                                <p>Consider adding indexes to frequently queried columns in your user table to improve performance by 40%.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="suggestion-item">
+                            <div class="suggestion-icon">🔒</div>
+                            <div class="suggestion-text">
+                                <h4>Security Enhancement</h4>
+                                <p>Add input validation for user authentication endpoints to prevent SQL injection attacks.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="suggestion-item">
+                            <div class="suggestion-icon">🧪</div>
+                            <div class="suggestion-text">
+                                <h4>Test Coverage</h4>
+                                <p>Missing test cases for error handling in PaymentService.processPayment() method. Coverage: 65%</p>
+                            </div>
+                        </div>
+                        
+                        <div class="suggestion-item">
+                            <div class="suggestion-icon">⚡</div>
+                            <div class="suggestion-text">
+                                <h4>Performance Boost</h4>
+                                <p>Replace ArrayList with LinkedList in your queue implementation for better insertion performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/automatic.js') }}"></script>
+</body>
+</html>

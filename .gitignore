@@ -1,0 +1,7 @@
+.venv
+./venv
+temp
+./temp
+/temp
+./services/__pycache__
+/services/__pycache__
